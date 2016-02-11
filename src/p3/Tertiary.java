@@ -1,8 +1,13 @@
 package p3;
 
+import java.util.Scanner;
+
 public class Tertiary {
 
     public static void main(String[] args) {
+        int i = 0, size;
+        String color;
+        char menu ='N';
         //Create Balloon array
         Balloon[] thing = new Balloon[500];
         //build balloon objects
@@ -10,6 +15,21 @@ public class Tertiary {
         thing[1] = new Balloon(12,"Pink");
         thing[2] = new Balloon(16,"Yellow");
         thing[3] = new Balloon(3,"Green");
+        Scanner input = new Scanner( System.in );
+        for(;menu != 'Y';) {
+            for (; menu != 'Y'; ) {
+                System.out.println("Please input what Balloon register you would like to access :");
+                i = input.nextInt();
+                System.out.printf("Size = %d inches; Color = %s%n", thing[i].getSize(), thing[i].getColor());
+                System.out.println("\nAre you sure you wish to edit this? \nY/N?");
+                menu = input.next().toUpperCase().charAt(0);
+            }
+            System.out.println("Size = ");
+            size = input.nextInt();
+            System.out.println("Color = ");
+            color = input.next();
+            thing[i] = new Balloon(size, color);
+        }
         //Print num of balloons made today
         System.out.printf("Numb of balloons made = %d%n", Balloon.getQuantity());
         //show the balloon's characteristics.
@@ -36,16 +56,12 @@ class Balloon {
         quantity++;
     }
     //Return color of the object
-    String getColor(){
-        return color;
-    }
+    String getColor(){return color;}
     //Return size of balloon
-    int getSize(){
-        return size;
-    }
+    int getSize(){return size;}
     //Return quantity of balloons made
-   static int getQuantity(){
-        return quantity;
-    }
+   static int getQuantity(){return quantity;}
+    //Create a balloon
+    static int buildBalloon(){};
 }
 
