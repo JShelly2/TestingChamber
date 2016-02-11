@@ -1,6 +1,5 @@
 package p3;
 
-
 public class Tertiary {
 
     public static void main(String[] args) {

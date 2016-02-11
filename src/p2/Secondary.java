@@ -1,11 +1,7 @@
 package p2;
 
-
 import java.util.Arrays;
 
-/**
- * Created by jagger on 1/28/2016.
- */
 public class Secondary {
     public static void main(String[] jagger) {
         int [] hand = {21,23,5,2,4};

@@ -18,9 +18,13 @@ public class Main {
             System.out.println("Enter side 2 of a right triangle ( > 0 ): ");
             side2 = input.nextDouble();
         }
-        //Ok, I know this is long but this is the print statement for the entire thing, I kept this format because it's much more readable for me.
-        //I chose to force the doubles that aren't user input into a 2 decimal format which in turn lengthened this string BUT IT WORKS.
+        /* Ok, I know this is long but this is the print statement for the entire thing, I kept this format because it's much more readable for me.
+        I chose to force the doubles that aren't user input into a 2 decimal format which in turn lengthened this string BUT IT WORKS.
         System.out.println("Side 1 = "+ side1+ ", Side 2 = "+ side2+ ", Hypotenuse = "+ String.format("%.2f",Hypotenuse(side1,side2))+ "\nThe perimeter of the triangle = "+ String.format("%.2f",Perimeter(side1,side2,Hypotenuse(side1,side2)))+ "\nThe area of the triangle = "+ String.format("%.2f",Area(side1,side2)));
+        Revised variant */
+        System.out.printf("Side 1 = %.2f, Side 2 = %.2f, Hypotenuse = %.2f%n",side1, side2, Hypotenuse(side1,side2));
+        System.out.printf("The area of the triangle = %.2f", Area(side1,side2));
+
     }
     //Simple Hypotenuse method that returns s3 I.E. side3
     public static double Hypotenuse(double s1, double s2){
