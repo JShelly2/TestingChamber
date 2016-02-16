@@ -15,6 +15,7 @@ public class Tertiary {
         thing[1] = new Balloon(12,"Pink");
         thing[2] = new Balloon(16,"Yellow");
         thing[3] = new Balloon(3,"Green");
+
         Scanner input = new Scanner( System.in );
         for(;menu != 'Y';) {
             for (; menu != 'Y'; ) {
@@ -36,7 +37,7 @@ public class Tertiary {
         for(Balloon each : thing)
             //If object null, don't run
             if(each != null)
-                System.out.printf("size = %d inches; color = %s%n", each.getSize(), each.getColor());
+                System.out.println(each);
     }
 }
 class Balloon {
@@ -46,7 +47,7 @@ class Balloon {
     //Default constructor
     Balloon(){
         size = 10;
-        color = "blue";
+        color = "Blue";
         quantity++;
     }
     //Custom constructor
@@ -60,8 +61,18 @@ class Balloon {
     //Return size of balloon
     int getSize(){return size;}
     //Return quantity of balloons made
-   static int getQuantity(){return quantity;}
+    static int getQuantity(){return quantity;}
     //Create a balloon
-    static int buildBalloon(){};
+    static int buildBalloon(){
+        return 0;
+    };
+
+    @Override
+    public String toString() {
+        return "Balloon{" +
+                "color='" + color + '\'' +
+                ", size=" + size +
+                '}';
+    }
 }
 
